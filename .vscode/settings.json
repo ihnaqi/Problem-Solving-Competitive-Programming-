@@ -1,0 +1,10 @@
+{
+   "files.associations": {
+      "string": "cpp",
+      "vector": "cpp",
+      "bitset": "cpp",
+      "chrono": "cpp",
+      "algorithm": "cpp",
+      "unordered_map": "cpp"
+   }
+}
