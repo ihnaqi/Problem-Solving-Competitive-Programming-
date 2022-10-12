@@ -2,4 +2,4 @@
 
 Competitive Programming
 
-- [click here](open.kattis.com)
+- [click here](https://open.kattis.com/)
