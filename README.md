@@ -1,5 +1,5 @@
-# Java and CPP Solutions to Kattis Problems
+# Java and CPP Solutions to [Kattis](https://open.kattis.com/) Problems
 
 Competitive Programming
 
-- [click here](https://open.kattis.com/)
+- [Go to open.kattis.com](https://open.kattis.com/)
