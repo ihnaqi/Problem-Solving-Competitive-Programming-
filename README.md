@@ -4,4 +4,6 @@
 
 ## Competitive Programming
 
+```
 - [Go to open.kattis.com](https://open.kattis.com/)
+```
