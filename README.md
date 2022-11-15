@@ -1,9 +1,3 @@
-# Java and Cpp Solutions to [Kattis](https://open.kattis.com/) Problems
+# Solved Problems
 
-[![Kattis Logo](https://open.kattis.com/images/site-logo?v=0a3f6018aacf449381741e45cf0ff6ba)](https://open.kattis.com)
-
-> ## Competitive Programming
->
-> ---
->
-> - [Go to open.kattis.com](https://open.kattis.com/)
+> - In this repository I have and am uploading solution which I solve on different platforms like [Kattis](https://www.open.kattis.com), [Code Forces](https://www.codeforces.com), [Leet Code](https://www.leetcode.com) etc.
