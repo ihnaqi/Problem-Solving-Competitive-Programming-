@@ -1,3 +1,13 @@
 *.class
 *.exe
 tempCodeRunnerFile.cpp
+tempCodeRunnerFile.java
+*.pdf
+*/*.exe
+*/*.class
+*.log
+*.db
+*.txt
+*.py
+
+

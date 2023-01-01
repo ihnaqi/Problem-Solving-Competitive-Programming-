@@ -6,5 +6,8 @@
       "chrono": "cpp",
       "algorithm": "cpp",
       "unordered_map": "cpp"
+   },
+   "files.watcherExclude": {
+      "**/target": true
    }
 }
