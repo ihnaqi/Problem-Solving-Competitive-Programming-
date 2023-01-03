@@ -9,4 +9,5 @@ tempCodeRunnerFile.java
 *.db
 *.txt
 *.py
-ColorLand.cpp
+test/
+kattis/ColorLand.java
