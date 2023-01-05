@@ -10,4 +10,6 @@ tempCodeRunnerFile.java
 *.txt
 *.py
 test/
+lib/
+*.jar
 kattis/ColorLand.java

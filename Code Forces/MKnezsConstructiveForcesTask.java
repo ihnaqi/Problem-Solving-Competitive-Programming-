@@ -28,7 +28,7 @@ public class MKnezsConstructiveForcesTask {
             pw.print('\n');
             continue;
          } else {
-            pw.print("YES");
+            pw.print("YES\n");
 
             int y = n / 2;
             for (int i = 0; i < n / 2; i++) {
