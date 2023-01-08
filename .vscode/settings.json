@@ -5,7 +5,9 @@
       "bitset": "cpp",
       "chrono": "cpp",
       "algorithm": "cpp",
-      "unordered_map": "cpp"
+      "unordered_map": "cpp",
+      "string_view": "cpp",
+      "regex": "cpp"
    },
    "files.watcherExclude": {
       "**/target": true
