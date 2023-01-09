@@ -4,11 +4,13 @@ using namespace std;
 int main()
 {
    ios_base::sync_with_stdio(false);
+   cin.tie(NULL);
 
    string s;
    string str;
    cin >> s;
    cin >> str;
+
    for (char &c : s)
    {
       c = tolower(c);
@@ -19,45 +21,16 @@ int main()
       c = tolower(c);
    }
 
-   int a = 0;
-   int b = 0;
-
-   int count = 1;
-   for (int i = 0; i < s.size(); i++)
+   if (s.compare(str) > 0)
    {
-      if (s[i] - 'a' > s[i - 1] - 'a')
-      {
-         count += s[i] - 'a';
-      }
-      else if (s[i] - 'a' < s[i - 1] - 'a')
-      {
-         break;
-      }
+      printf("1\n");
    }
-
-   int count2 = 1;
-   for (int i = 0; i < str.size(); i++)
+   else if (s.compare(str) < 0)
    {
-      if (str[i] - 'a' > str[i - 1] - 'a')
-      {
-         count2 += str[i] - 'a';
-      }
-      else if (str[i] - 'a' < str[i - 1] - 'a')
-      {
-         break;
-      }
-   }
-
-   if (count == count2)
-   {
-      cout << 0 << endl;
-   }
-   else if (count > count2)
-   {
-      cout << 1 << endl;
+      printf("-1\n");
    }
    else
    {
-      cout << -1 << endl;
+      printf("0\n");
    }
 }

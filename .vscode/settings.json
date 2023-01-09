@@ -7,7 +7,10 @@
       "algorithm": "cpp",
       "unordered_map": "cpp",
       "string_view": "cpp",
-      "regex": "cpp"
+      "regex": "cpp",
+      "*.tcc": "cpp",
+      "forward_list": "cpp",
+      "list": "cpp"
    },
    "files.watcherExclude": {
       "**/target": true

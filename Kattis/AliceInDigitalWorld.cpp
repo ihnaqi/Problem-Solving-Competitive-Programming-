@@ -16,29 +16,24 @@ int main()
       scanf("%d %d", &n, &m);
 
       int A[n];
+      int aSum[n];
 
       for (int i = 0; i < n; i++)
       {
          scanf("%d", &A[i]);
       }
 
-      int res = -(1 << 29);
+      int diff = 0;
+      int res = 0;
 
-      int sum = 0;
       for (int i = 0; i < n; i++)
       {
-         if (A[i] < m)
+         if (A[i] == m)
          {
-            res = max(sum, res);
-            sum = 0;
          }
-         else
-         {
-            sum += A[i];
-         }
-      }
 
-      res = max(sum, res);
+         res = max(res, aSum[i]);
+      }
 
       printf("%d\n", res);
    }
