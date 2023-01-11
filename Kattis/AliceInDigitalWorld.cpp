@@ -28,11 +28,8 @@ int main()
 
       for (int i = 0; i < n; i++)
       {
-         if (A[i] == m)
-         {
-         }
-
-         res = max(res, aSum[i]);
+         // Find a subsequence containing `m` exactly once,
+         // such that  `m` is the smallest number in that sequence and the sum of the subsequence is the largest of all such subsequences.
       }
 
       printf("%d\n", res);
