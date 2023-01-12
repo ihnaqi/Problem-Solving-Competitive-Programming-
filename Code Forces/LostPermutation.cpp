@@ -12,22 +12,26 @@ int main()
    while (t--)
    {
       int n;
-      int y;
-      scanf("%d %d", &n, &y);
-      while (n--)
+      int lSum;
+
+      scanf("%d %d", &n, &lSum);
+      vector<int> A(n, 0);
+
+      int totalSum = lSum;
+
+      for (int i = 0; i < n; i++)
       {
-         int x;
-         scanf("%d", &x);
-         y += x;
+         scanf("%d", &A[i]);
+         totalSum += A[i];
       }
-      double ans = (sqrt((8 * y) + 1) / 2) - 0.5;
-      if (fmod(ans, 1.0))
+
+      int sum = 0;
+
+      for (int i = 0; i < n; i++)
       {
-         printf("NO\n");
+         sum += i + 1;
       }
-      else
-      {
-         printf("YES\n");
-      }
+
+      printf("%s\n", sum == totalSum ? "YES" : "NO");
    }
 }
