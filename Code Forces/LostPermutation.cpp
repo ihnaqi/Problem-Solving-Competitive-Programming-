@@ -11,27 +11,40 @@ int main()
 
    while (t--)
    {
+      ios_base::sync_with_stdio(0);
+
       int n;
-      int lSum;
+      int nSum;
+      scanf("%d %d", &n, &nSum);
 
-      scanf("%d %d", &n, &lSum);
-      vector<int> A(n, 0);
-
-      int totalSum = lSum;
-
+      int A[n];
+      int mx = -(1 >> 29);
       for (int i = 0; i < n; i++)
       {
          scanf("%d", &A[i]);
-         totalSum += A[i];
+         nSum += A[i];
+         mx = max(mx, A[i]);
       }
 
       int sum = 0;
-
-      for (int i = 0; i < n; i++)
+      int count = 0;
+      for (int i = 1; i < nSum + 1; i++)
       {
-         sum += i + 1;
+         if (sum >= nSum)
+         {
+            break;
+         }
+         sum += i;
+         count = i;
       }
 
-      printf("%s\n", sum == totalSum ? "YES" : "NO");
+      if (sum != nSum || count <= n || mx > count)
+      {
+         printf("NO\n");
+      }
+      else
+      {
+         printf("YES\n");
+      }
    }
 }
