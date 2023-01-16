@@ -9,24 +9,22 @@ int main()
    int t;
    scanf("%d %d", &n, &t);
 
-   char str[n];
-   scanf("%s", str);
+   char s[n];
+   scanf("%s", s);
 
-   int i = 0;
-   while (i < n - 1)
+   while (t--)
    {
-      int x = t;
-      while (x-- > 0)
+      for (int i = 0; i < n; i++)
       {
 
-         if (str[i] == 'B' && str[i + 1] == 'G')
+         if (s[i] == 'G' && s[i - 1] == 'B')
          {
-            swap(str[i], str[i + 1]);
-            i++;
+            s[i] = 'B';
+            s[i - 1] = 'G';
+            ++i;
          }
       }
-      i++;
    }
 
-   printf("%s\n", str);
+   printf("%s\n", s);
 }
