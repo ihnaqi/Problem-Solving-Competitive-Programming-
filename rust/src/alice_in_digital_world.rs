@@ -1,81 +1,83 @@
 //@author: @ihnaqi
 //@href: https://open.kattis.com/problems/alicedigital
-//@title: Alice in the Digital World
 //@difficulty: Medium
 
-#![
-   allow(
-      dead_code,
-      unused,
-      clippy::needless_borrow
-   )
-]
-
-use std::io;
-use std::cmp;
+use std::{io, cmp::max};
 
 fn input() -> String {
    let mut s = String::new();
+
    io::stdin().read_line(&mut s).unwrap();
 
-   s.trim().to_string()
+   s
 }
 
-pub fn main(){
+pub fn main() {
    let s = input();
-   let mut t = s.parse::<i32>().unwrap();
+   let mut t = s.trim().parse::<i32>().unwrap();
 
    while t > 0 {
-      solve();
+      let s = input();
+      let mut numbers = s.trim().split_whitespace();
+      let n = numbers.next().unwrap().parse::<i32>().unwrap();
+      let m = numbers.next().unwrap().parse::<i32>().unwrap();
+      solve(n, m);
       t -= 1;
    }
 }
 
-fn solve() {
-   let s = input();
-   let mut numbers = s.split_whitespace();
-   let n = numbers.next().unwrap().parse::<usize>().unwrap();
-   let m = numbers.next().unwrap().parse::<i32>().unwrap();
-
-   let v: Vec<_> = input().split_whitespace().map(|x| x.parse::<i32>().unwrap()).collect();
-   let mut i = 0;
+fn solve(n: i32, m: i32) {
+   let vec: Vec<_> = input().trim().split_whitespace().map(|x| x.parse::<i32>().unwrap()).collect();
    let mut res = 0;
+   let mut curr_sum = 0;
+   let mut m_count = 0;
+   // let mut v = vec![0; vec.len()];
 
-   while i < n{
-      if v[i] < m {
-         i += 1;
-         continue;
+   for i in 0..n {
+      let num = vec[i as usize];
+      if num < m {
+         if m_count > 0 {
+            res = max(res, curr_sum);
+         }
+         m_count = 0;
+         curr_sum = 0;
       }
-      let mut j = i;
-      let mut m_count = 0;
-      let mut curr_sum = 0;
-      let mut prev_m_index = 0;
-
-      while j < n && v[j] >= m{
-         if v[j] == m {
-            if m_count == 0 {
-               prev_m_index = j;
+      else if m == num {
+         if m_count > 0 {
+            let mut j = i as usize - 1;
+            let mut temp = 0;
+            while j > 0 {
+               if vec[j] == m {
+                  break;
+               }
+               temp += vec[j];
+               j -= 1;
             }
+            res = max(res, curr_sum);
+            curr_sum = temp;
             m_count += 1;
          }
-         if m_count > 1 {
-            break;
-         }
-         curr_sum += v[j];
-         j += 1;
-      }
-
-      if m_count > 0 {
-         res = cmp::max(res, curr_sum);
-      }
-
-      if prev_m_index == 0 {
-         i = j;
+         curr_sum += num;
+         m_count += 1;
       }
       else {
-         i = prev_m_index + 1;
+         curr_sum += num;
       }
+   }
+
+   if m_count > 0 {
+      res = max(res, curr_sum);
    }
 
    println!("{}", res);
 }
+// Example test cases
+/*
+
+2
+6 2
+1 3 2 6 2 4
+10 3
+4 7 8 12 14 1 3 7 4 3
+
+*/
